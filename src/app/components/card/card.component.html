@@ -3,11 +3,11 @@
     CITY
   </div>
   <div class="card__icon">
-    <app-weather-icon></app-weather-icon>
+    <app-weather-icon [type]="weather"></app-weather-icon>
   </div>
   <div class="card__temperature">
     <div class="card__degrees">20</div>
-    <div class="card__description">cloudy</div>
+    <div class="card__description">{{ weather }}</div>
   </div>
   <div class="card__min-max">
     <div class="card__min">20</div>
