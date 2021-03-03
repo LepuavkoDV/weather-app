@@ -1,0 +1,18 @@
+@mixin basic-flex($direction, $x: none, $y: none) {
+  display: flex;
+  flex-direction: $direction;
+  @if $x != null {
+    justify-content: $x;
+  }
+  @if $y != null {
+    align-items: $y;
+  }
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
