@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { ISettings } from '../../shared/types/ISettings';
 
 @Component({
   selector: 'app-body',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
   cards: number[] = [1, 2, 3];
-  constructor() { }
+  settings$: Observable<ISettings>;
+
+  constructor(
+    private store: Store,
+  ) { }
 
   ngOnInit(): void {
+    // this.settings$ = this.store.select()
   }
 
 }

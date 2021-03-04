@@ -9,6 +9,8 @@ import { CardComponent } from './components/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WeatherIconComponent } from './components/weather-icon/weather-icon.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './state/app.reducer';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import { WeatherIconComponent } from './components/weather-icon/weather-icon.com
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
+    StoreModule.forRoot({
+      appReducer,
+    }, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]

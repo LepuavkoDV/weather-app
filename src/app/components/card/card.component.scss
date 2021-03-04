@@ -1,10 +1,11 @@
 @import "src/assets/scss/mixins";
+@import "src/assets/scss/variables";
 
 .weather-card {
   @include basic-flex(column, space-between, center);
-  box-sizing: border-box;
   border-radius: 20px;
   box-shadow: 0 0 7px rgba(#000000, 0.5);
+  box-sizing: border-box;
   height: 775px;
   transition: all 0.3s ease;
   width: 475px;
@@ -15,15 +16,15 @@
 }
 
 .weather-card__city-title {
-  padding: 28px;
   font-size: 28px;
+  padding: 28px;
 }
 
 .weather-card__icon {
-  width: 280px;
   height: 280px;
-  @include basic-flex(row, center, center);
   position: relative;
+  @include basic-flex(row, center, center);
+  width: 280px;
 }
 
 .weather-card__temperature {
@@ -33,53 +34,79 @@
 
 .weather-card__degrees {
   @include basic-flex(row, center, center);
-  height: 120px;
   font-size: 120px;
+  height: 120px;
   position: relative;
 
   &:after {
-    content: '';
     border: 1px solid #000;
     border-radius: 50%;
-    width: 15px;
+    content: '';
     height: 15px;
+    width: 15px;
     @include position(absolute, 0, -15px);
     z-index: 1;
   }
 }
 
 .weather-card__description {
-  text-transform: uppercase;
   font-size: 20px;
-  letter-spacing: 2px;
   font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .weather-card__min-max-temperature {
-  width: 100%;
+  box-sizing: border-box;
   height: 150px;
   padding: 28px;
-  box-sizing: border-box;
+  width: 100%;
   @include basic-flex(row, space-between, center);
 }
 
 .min-max-temperature {
   box-sizing: border-box;
-  border: 1px solid red;
-  width: 60px;
-  height: 80px;
   font-size: 50px;
   font-weight: 100;
-  @include basic-flex(row, center, center);
+  height: 80px;
   position: relative;
+  @include basic-flex(row, center, center);
+  width: 60px;
 
   &--min {
     &:before {
       content: '';
-      width: 20px;
-      height: 20px;
-      border: 1px solid red;
-      @include position(absolute, 0, 0);
+      transform: translateX(-50%);
+      @include triangle(20px, #{$temperature-color-min}, top);
+      @include position(absolute, -10px, null, null, 50%);
+    }
+
+    &:after {
+      color: $temperature-color-min;
+      content: 'Min';
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: capitalize;
+      @include position(absolute, null, null, -10px, 50%);
+      transform: translateX(-50%);
+    }
+  }
+
+  &--max {
+    &:before {
+      content: '';
+      transform: translateX(-50%);
+      @include triangle(20px, #{$temperature-color-max}, bottom);
+      @include position(absolute, 0, null, null, 50%);
+    }
+
+    &:after {
+      color: $temperature-color-max;
+      content: 'Max';
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: capitalize;
+      @include position(absolute, null, null, -10px, 50%);
       transform: translateX(-50%);
     }
   }
