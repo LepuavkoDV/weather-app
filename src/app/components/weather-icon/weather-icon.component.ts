@@ -8,16 +8,18 @@ import { weather } from '../../shared/types/weather';
 })
 
 export class WeatherIconComponent implements OnInit {
-  @Input() type: weather;
+  @Input() weather: weather;
   imagePath = 'assets/images/';
   imageExt = 'png';
+  imageSuffix = '_icon';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   getImageUrl(): string {
-    return `${this.imagePath}${this.type}_icon.${this.imageExt}`;
+    return `${this.imagePath}${this.weather}${this.imageSuffix}.${this.imageExt}`;
   }
 
 }
