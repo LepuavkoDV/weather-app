@@ -1,6 +1,6 @@
 @import "src/assets/scss/mixins";
 
-.card {
+.weather-card {
   @include basic-flex(column, space-between, center);
   box-sizing: border-box;
   border-radius: 20px;
@@ -14,14 +14,59 @@
   }
 }
 
-.card__city-title {
-  padding: 1em;
-  font-size: 2em;
+.weather-card__city-title {
+  padding: 28px;
+  font-size: 28px;
 }
 
-.card__icon {
+.weather-card__icon {
   width: 280px;
   height: 280px;
   @include basic-flex(row, center, center);
   position: relative;
+}
+
+.weather-card__temperature {
+  width: 280px;
+  @include basic-flex(column, space-between, center);
+}
+
+.weather-card__degrees {
+  @include basic-flex(row, center, center);
+  height: 120px;
+  font-size: 120px;
+  position: relative;
+
+  &:after {
+    content: '';
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    @include position(absolute, 0, -15px);
+    z-index: 1;
+  }
+}
+
+.weather-card__description {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.weather-card__min-max-temperature {
+  width: 100%;
+  height: 150px;
+  padding: 28px;
+  box-sizing: border-box;
+  @include basic-flex(row, space-between, center);
+}
+
+.min-max-temperature {
+  border: 1px solid red;
+  width: 60px;
+  height: 80px;
+  font-size: 30px;
+  @include basic-flex(row, center, center);
 }
