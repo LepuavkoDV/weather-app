@@ -1,0 +1,27 @@
+@import "src/assets/scss/mixins";
+
+.card {
+  @include basic-flex(column, space-between, center);
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 0 7px rgba(#000000, 0.5);
+  height: 775px;
+  transition: all 0.3s ease;
+  width: 475px;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(#000000, 0.5);
+  }
+}
+
+.card__city-title {
+  padding: 1em;
+  font-size: 2em;
+}
+
+.card__icon {
+  width: 280px;
+  height: 280px;
+  @include basic-flex(row, center, center);
+  position: relative;
+}

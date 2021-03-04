@@ -1,0 +1,24 @@
+@import "src/assets/scss/mixins.scss";
+@import "src/assets/scss/variables";
+
+.header {
+  @include basic-flex(row, space-between, center);
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(#000000, 0.5);
+  height: $header-height;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 150px;
+}
+
+.title {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.theme-switcher {
+  @include basic-flex(row, space-between, center);
+  width: 150px;
+}

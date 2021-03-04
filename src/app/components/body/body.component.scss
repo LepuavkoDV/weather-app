@@ -1,0 +1,8 @@
+@import "src/assets/scss/mixins.scss";
+@import "src/assets/scss/variables";
+
+.body {
+  width: 100%;
+  height: calc(100% - #{$header-height});
+  @include basic-flex(row, space-around, center);
+}
