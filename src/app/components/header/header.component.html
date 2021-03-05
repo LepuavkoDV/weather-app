@@ -3,7 +3,7 @@
   <h1 class="title">Weather app</h1>
   <div class="theme-switcher">
     <div class="theme__title">Light</div>
-    <mat-slide-toggle></mat-slide-toggle>
+    <mat-slide-toggle (change)="toggleTheme($event)"></mat-slide-toggle>
     <div class="theme__title">Dark</div>
   </div>
 </header>

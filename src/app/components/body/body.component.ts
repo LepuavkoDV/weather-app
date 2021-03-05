@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ISettings } from '../../shared/types/ISettings';
 import { AppState } from '../../state/app.state';
-import { selectSettings } from '../../state/app.selector';
 
 @Component({
   selector: 'app-body',
@@ -12,15 +10,14 @@ import { selectSettings } from '../../state/app.selector';
 })
 export class BodyComponent implements OnInit {
   cards: number[] = [1, 2, 3];
-  settings$: Observable<ISettings> = this.store.select(selectSettings);
+  theme: Observable<string>;
 
   constructor(
-    private store: Store,
-  ) { }
-
-  ngOnInit(): void {
-    console.log(this.settings$);
-    console.log(this.store);
+    private store: Store<AppState>,
+  ) {
+    this.theme = store.pipe(select(state => state.settings.theme));
   }
+
+  ngOnInit(): void {}
 
 }

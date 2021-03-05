@@ -1,4 +1,4 @@
-import { ISettings } from '../shared/types/ISettings';
+import { ISettings } from './app.reducer';
 
 export interface AppState {
   settings: ISettings;
