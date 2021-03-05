@@ -26,7 +26,7 @@ import { appReducer } from './state/app.reducer';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     StoreModule.forRoot({
-      appReducer,
+      settings: appReducer,
     }, {}),
   ],
   providers: [],
