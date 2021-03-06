@@ -13,6 +13,18 @@
   &:hover {
     box-shadow: 0 0 15px rgba(#000000, 0.5);
   }
+
+  &--dark {
+    background: linear-gradient(180deg, #00057A, #721C87);
+    color: aliceblue;
+    box-shadow: none;
+
+    .weather-card__degrees {
+      &:after {
+        border: 1px solid aliceblue;
+      }
+    }
+  }
 }
 
 .weather-card__city-title {

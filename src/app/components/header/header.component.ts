@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/app.reducer';
@@ -14,6 +14,7 @@ import { theme, Themes } from '../../types/theme';
 })
 export class HeaderComponent implements OnInit {
   theme$: Observable<theme>;
+  Themes = Themes;
   constructor(
     private store: Store<AppState>,
   ) {}

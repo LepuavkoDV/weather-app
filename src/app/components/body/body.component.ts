@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState} from '../../reducers/app.reducer';
+import { selectTheme } from '../../selectors/app.selector';
+import { theme, Themes} from '../../types/theme';
+
 
 @Component({
   selector: 'app-body',
@@ -10,14 +13,16 @@ import { AppState} from '../../reducers/app.reducer';
 })
 export class BodyComponent implements OnInit {
   cards: number[] = [1, 2, 3];
-  theme: Observable<string>;
+  theme$: Observable<theme>;
+  Themes = Themes;
 
   constructor(
     private store: Store<AppState>,
   ) {
-    this.theme = store.pipe(select(state => state.settings.theme));
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.theme$ = this.store.select(selectTheme);
+  }
 
 }
