@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { weather } from '../../types/weather';
+import { weather, Weathers } from '../../types/weather';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/app.reducer';
 import { selectTheme } from '../../selectors/app.selector';
@@ -12,7 +12,7 @@ import { theme, Themes } from '../../types/theme';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  weather: weather = 'sunny';
+  weather: weather = Weathers.SUNNY;
   theme$: Observable<theme>;
   Themes = Themes;
   constructor(

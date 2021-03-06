@@ -19,7 +19,7 @@ export class WeatherIconComponent implements OnInit {
   }
 
   getImageUrl(): string {
-    return `${this.imagePath}${this.weather}${this.imageSuffix}.${this.imageExt}`;
+    return `${this.imagePath}${this.weather.toLowerCase()}${this.imageSuffix}.${this.imageExt}`;
   }
 
 }
