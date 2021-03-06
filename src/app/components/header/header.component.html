@@ -1,9 +1,9 @@
-<header class="header" [ngClass]="{ 'header--dark': (theme$ | async) === Themes.DARK }">
+<header class="header" [ngClass]="{ 'header--dark': (theme$ | async) === Themes.dark }">
   <div class="logo"></div>
   <h1 class="title">Weather app theme</h1>
   <div class="theme-switcher">
-    <div class="theme__title">{{ Themes.LIGHT | titlecase }}</div>
+    <div class="theme__title">{{ Themes.light | titlecase }}</div>
     <mat-slide-toggle (change)="toggleTheme($event)"></mat-slide-toggle>
-    <div class="theme__title">{{ Themes.DARK | titlecase }}</div>
+    <div class="theme__title">{{ Themes.dark | titlecase }}</div>
   </div>
 </header>

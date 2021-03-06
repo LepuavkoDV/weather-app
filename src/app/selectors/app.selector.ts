@@ -1,7 +1,10 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { IAppSettings } from '../reducers/app.reducer';
+import { IAppSettings, AppStateFeatures } from '../reducers/app.reducer';
 
 export const selectTheme = createSelector(
-  createFeatureSelector<IAppSettings>('settings'),
-  state => state.theme,
+  createFeatureSelector<IAppSettings>(AppStateFeatures.settings),
+  state => {
+    console.log(state);
+    return state.theme;
+  },
 );

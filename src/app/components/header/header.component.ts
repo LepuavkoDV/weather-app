@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleTheme($event: MatSlideToggleChange): void {
-    const newTheme = $event.checked ? Themes.DARK : Themes.LIGHT;
+    const newTheme = $event.checked ? Themes.dark : Themes.light;
     this.store.dispatch(setTheme({ newTheme }));
   }
 
