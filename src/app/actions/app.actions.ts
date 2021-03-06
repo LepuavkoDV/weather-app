@@ -1,7 +1,11 @@
 import { createAction, props } from '@ngrx/store';
 import { theme } from '../types/theme';
 
+export enum AppActions {
+  SetTheme = '[SETTINGS] set theme',
+}
+
 export const setTheme = createAction(
-  '[SETTINGS] set theme',
-  props<{ theme: theme }>(),
+  AppActions.SetTheme,
+  props<{ newTheme: theme }>(),
 );

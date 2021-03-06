@@ -1,20 +1,20 @@
 import { createReducer, on } from '@ngrx/store';
 import { setTheme } from '../actions/app.actions';
-import { theme } from '../types/theme';
+import { theme, Themes } from '../types/theme';
 
-export interface ISettings {
+export interface IAppSettings {
   theme: theme;
 }
 
 export interface AppState {
-  settings: ISettings;
+  settings: IAppSettings;
 }
 
-export const initialState: ISettings = {
-  theme: 'light',
+export const initialState: IAppSettings = {
+  theme: Themes.LIGHT,
 };
 
 export const appReducer = createReducer(
   initialState,
-  on(setTheme, (state, { theme } ) => Object.assign(state.theme, { theme }))
+  on(setTheme, (state, { newTheme } ) => Object.assign(state.theme, { theme: newTheme }))
 );
