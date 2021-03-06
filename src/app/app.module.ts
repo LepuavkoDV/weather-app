@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WeatherIconComponent } from './components/weather-icon/weather-icon.component';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './reducers/app.reducer';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,12 @@ import { appReducer } from './reducers/app.reducer';
     MatSlideToggleModule,
     FormsModule,
     StoreModule.forRoot({
-      settings: appReducer,
+      appReducer,
     }, {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

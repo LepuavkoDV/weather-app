@@ -1,9 +1,9 @@
 export enum Weathers {
-  CLOUDY = 'CLOUDY',
-  RAINY = 'RAINY',
-  SNOWY = 'SNOWY',
-  STORMY = 'STORMY',
-  SUNNY = 'SUNNY',
+  cloudy = 'cloudy',
+  rainy = 'rainy',
+  snowy = 'snowy',
+  stormy = 'stormy',
+  sunny = 'sunny',
 }
 
-export type weather = Weathers.CLOUDY | Weathers.RAINY | Weathers.SNOWY | Weathers.STORMY | Weathers.SUNNY;
+export type weather = Weathers.cloudy | Weathers.rainy | Weathers.snowy | Weathers.stormy | Weathers.sunny;

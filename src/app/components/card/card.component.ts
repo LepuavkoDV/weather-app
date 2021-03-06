@@ -12,7 +12,7 @@ import { theme, Themes } from '../../types/theme';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  weather: weather = Weathers.SUNNY;
+  weather: weather = Weathers.sunny;
   theme$: Observable<theme>;
   Themes = Themes;
   constructor(

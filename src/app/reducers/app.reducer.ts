@@ -6,19 +6,26 @@ export interface IAppSettings {
   theme: theme;
 }
 
-export enum AppStateFeatures {
-  settings = 'settings'
-}
-
 export interface AppState {
-  [AppStateFeatures.settings]: IAppSettings;
+  settings: IAppSettings;
 }
 
-export const initialState: IAppSettings = {
-  theme: Themes.light,
+export const initialState: AppState = {
+  settings: {
+    theme: Themes.light,
+  }
 };
 
 export const appReducer = createReducer(
   initialState,
-  on(setTheme, (state, { newTheme } ) => Object.assign(state.theme, { theme: newTheme }))
+  on(setTheme, (state, { newTheme } ) => {
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          theme: newTheme,
+        }
+      };
+    }
+  )
 );
