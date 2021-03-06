@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { weather } from '../../shared/types/weather';
+import { weather } from '../../types/weather';
 
 @Component({
   selector: 'app-card',

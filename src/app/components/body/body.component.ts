@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../../state/app.state';
+import { AppState} from '../../reducers/app.reducer';
 
 @Component({
   selector: 'app-body',

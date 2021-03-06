@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WeatherIconComponent } from './components/weather-icon/weather-icon.component';
 import { StoreModule } from '@ngrx/store';
-import { appReducer } from './state/app.reducer';
+import { appReducer } from './reducers/app.reducer';
 
 @NgModule({
   declarations: [

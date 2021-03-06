@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store } from '@ngrx/store';
-import { setTheme } from '../../state/app.actions';
+import { setTheme } from '../../actions/app.actions';
 
 @Component({
   selector: 'app-header',

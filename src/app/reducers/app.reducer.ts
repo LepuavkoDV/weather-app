@@ -1,8 +1,13 @@
-import { createReducer, on, Action } from '@ngrx/store';
-import { setTheme } from './app.actions';
+import { createReducer, on } from '@ngrx/store';
+import { setTheme } from '../actions/app.actions';
+import { theme } from '../types/theme';
 
 export interface ISettings {
-  theme: string;
+  theme: theme;
+}
+
+export interface AppState {
+  settings: ISettings;
 }
 
 export const initialState: ISettings = {

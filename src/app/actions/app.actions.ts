@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { theme } from '../shared/types/theme';
+import { theme } from '../types/theme';
 
 export const setTheme = createAction(
   '[SETTINGS] set theme',
