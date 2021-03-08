@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { IWeather } from '../types/IWeather';
 
 export enum WeatherEffectsActionTypes {
   load = '[Weather page] Load Weather',
@@ -7,5 +8,5 @@ export enum WeatherEffectsActionTypes {
 
 export const setWeather = createAction(
   WeatherEffectsActionTypes.loadSuccess,
-  props<{ weather: any }>(),
+  props<{ newWeather: IWeather }>(),
 );

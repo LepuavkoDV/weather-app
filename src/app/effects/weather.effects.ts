@@ -11,7 +11,7 @@ export class WeatherEffects {
       ofType(WeatherEffectsActionTypes.load),
       mergeMap(() => this.weatherService.getWeather()
         .pipe(
-          map(weather => ({ type: WeatherEffectsActionTypes.loadSuccess, weather })),
+          map(weather => ({ type: WeatherEffectsActionTypes.loadSuccess, newWeather: weather })),
           catchError(() => EMPTY)
         )
       )

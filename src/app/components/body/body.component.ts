@@ -3,7 +3,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState} from '../../reducers/app.reducer';
 import { selectTheme } from '../../selectors/app.selector';
+import { selectWeather } from '../../selectors/weather.selector';
 import { theme, Themes} from '../../types/theme';
+import { IWeather } from '../../types/IWeather';
 
 
 @Component({
@@ -12,9 +14,10 @@ import { theme, Themes} from '../../types/theme';
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent implements OnInit {
-  cards: number[] = [1, 2, 3];
+  cards: number[] = [1];
   theme$: Observable<theme>;
   Themes = Themes;
+  weather$: Observable<IWeather>;
 
   constructor(
     private store: Store<AppState>,
@@ -23,6 +26,6 @@ export class BodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.theme$ = this.store.select(selectTheme);
+    this.weather$ = this.store.select(selectWeather);
   }
-
 }
