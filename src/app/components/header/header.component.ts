@@ -6,6 +6,7 @@ import { setTheme } from '../../actions/app.actions';
 import { selectTheme } from '../../selectors/app.selector';
 import { Observable } from 'rxjs';
 import { theme, Themes } from '../../types/theme';
+import { WeatherEffectsActionTypes } from '../../actions/weather.actions';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.theme$ = this.store.select(selectTheme);
+    this.store.dispatch({ type: WeatherEffectsActionTypes.load });
   }
 
   toggleTheme($event: MatSlideToggleChange): void {

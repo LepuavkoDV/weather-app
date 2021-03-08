@@ -13,19 +13,17 @@ export interface AppState {
 export const initialState: AppState = {
   settings: {
     theme: Themes.light,
-  }
+  },
 };
 
-export const appReducer = createReducer(
+export const app = createReducer(
   initialState,
-  on(setTheme, (state, { newTheme } ) => {
-      return {
-        ...state,
-        settings: {
-          ...state.settings,
-          theme: newTheme,
-        }
-      };
-    }
-  )
+  on(setTheme, (state, { newTheme } ) => ({
+      ...state,
+      settings: {
+        ...state.settings,
+        theme: newTheme,
+      }
+    })
+  ),
 );
