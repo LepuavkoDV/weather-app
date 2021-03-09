@@ -8,10 +8,10 @@ import { WeatherActionTypes } from '../actions/weather.actions';
 @Injectable()
 export class WeatherEffects {
   loadWeather$ = createEffect(() => this.actions$.pipe(
-      ofType(WeatherActionTypes.load),
+      ofType(WeatherActionTypes.loadWeather),
       mergeMap(() => this.weatherService.getWeather()
         .pipe(
-          map(weather => ({ type: WeatherActionTypes.loadSuccess, weather })),
+          map(weather => ({ type: WeatherActionTypes.setWeather, weather })),
           catchError(() => EMPTY)
         )
       )

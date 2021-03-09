@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { setTheme } from '../actions/app.actions';
+import { setNewTheme } from '../actions/app.actions';
 import { theme, Themes } from '../types/theme';
 
 export interface IAppSettings {
@@ -18,7 +18,7 @@ export const initialState: AppState = {
 
 export const app = createReducer(
   initialState,
-  on(setTheme, (state, { newTheme } ) => ({
+  on(setNewTheme, (state, { newTheme } ) => ({
       ...state,
       settings: {
         ...state.settings,

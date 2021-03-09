@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.store.dispatch({ type: WeatherActionTypes.load });
+    this.store.dispatch({ type: WeatherActionTypes.loadWeather });
   }
 }

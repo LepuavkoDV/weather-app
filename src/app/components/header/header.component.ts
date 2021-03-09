@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/app.reducer';
-import { setTheme } from '../../actions/app.actions';
+import { setNewTheme } from '../../actions/app.actions';
 import { selectTheme } from '../../selectors/app.selector';
 import { Observable } from 'rxjs';
 import { theme, Themes } from '../../types/theme';
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
 
   toggleTheme($event: MatSlideToggleChange): void {
     const newTheme = $event.checked ? Themes.dark : Themes.light;
-    this.store.dispatch(setTheme({ newTheme }));
+    this.store.dispatch(setNewTheme({ newTheme }));
   }
 
 }
