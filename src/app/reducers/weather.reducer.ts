@@ -7,7 +7,7 @@ export interface WeatherState {
 }
 
 export const initialState: WeatherState = {
-  weather: null,
+  weather: undefined,
 };
 
 export const weather = createReducer(

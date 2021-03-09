@@ -1,16 +1,16 @@
 <div class="weather-card" [ngClass]="{ 'weather-card--dark': (theme$ | async) === Themes.dark }">
   <div class="weather-card__city-title">
-    CITY
+    {{ weather1.name }}
   </div>
   <div class="weather-card__icon">
-    <app-weather-icon [weather]="weather"></app-weather-icon>
+    <app-weather-icon [weather]="weather1.weather[0].main"></app-weather-icon>
   </div>
   <div class="weather-card__temperature">
-    <div class="weather-card__degrees">20</div>
-    <div class="weather-card__description">{{ weather }}</div>
+    <div class="weather-card__degrees">{{ weather1.main.temp | number: '1.0-0' }}</div>
+    <div class="weather-card__description">{{ weather1.weather[0].main }}</div>
   </div>
   <div class="weather-card__min-max-temperature">
-    <div class="min-max-temperature min-max-temperature--min">20</div>
-    <div class="min-max-temperature min-max-temperature--max">23</div>
+    <div class="min-max-temperature min-max-temperature--min">{{ weather1.main.temp_min | number: '1.0-0' }}</div>
+    <div class="min-max-temperature min-max-temperature--max">{{ weather1.main.temp_max | number: '1.0-0' }}</div>
   </div>
 </div>
