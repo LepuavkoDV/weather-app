@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AppState} from '../../reducers/app.reducer';
 import { selectTheme } from '../../selectors/app.selector';
 import { selectWeather } from '../../selectors/weather.selector';
-import { theme, ThemeTypes} from '../../types/theme';
+import { TTheme, ThemeTypes} from '../../types/TTheme';
 import { IWeather } from '../../types/IWeather';
 
 
@@ -15,7 +15,7 @@ import { IWeather } from '../../types/IWeather';
 })
 export class BodyComponent implements OnInit {
   cards: number[] = [1];
-  theme$: Observable<theme>;
+  theme$: Observable<TTheme>;
   Themes = ThemeTypes;
   weather$: Observable<IWeather>;
 

@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import { setNewTheme } from '../actions/app.actions';
-import { theme, ThemeTypes } from '../types/theme';
+import { TTheme, ThemeTypes } from '../types/TTheme';
 
 export interface IAppSettings {
-  theme: theme;
+  theme: TTheme;
 }
 
 export interface AppState {

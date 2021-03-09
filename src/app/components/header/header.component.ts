@@ -5,7 +5,7 @@ import { AppState } from '../../reducers/app.reducer';
 import { setNewTheme } from '../../actions/app.actions';
 import { selectTheme } from '../../selectors/app.selector';
 import { Observable } from 'rxjs';
-import { theme, ThemeTypes } from '../../types/theme';
+import { TTheme, ThemeTypes } from '../../types/TTheme';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +13,7 @@ import { theme, ThemeTypes } from '../../types/theme';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  theme$: Observable<theme>;
+  theme$: Observable<TTheme>;
   Themes = ThemeTypes;
   constructor(
     private store: Store<AppState>,
