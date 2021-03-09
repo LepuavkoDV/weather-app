@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,9 @@ export class WeatherService {
   getWeather(): Subject<string> {
     const data = new Subject<string>();
     this.http
-      .get(`https://community-open-weather-map.p.rapidapi.com/weather?q=Moscow,ru&units=metric`, {
+      .get(`https://community-open-weather-map.p.rapidapi.com/weather?q=Kiev,ua&units=metric`, {
         headers: {
-          'x-rapidapi-key': 'f6ec054409msh6b81feb5aef6c24p1054b2jsn9f79e10d9358',
+          'x-rapidapi-key': environment.xRapidapiKey,
           'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
         }
       })

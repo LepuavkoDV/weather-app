@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { weather } from '../../types/weather';
 
 @Component({
   selector: 'app-weather-icon',
@@ -8,10 +7,7 @@ import { weather } from '../../types/weather';
 })
 
 export class WeatherIconComponent implements OnInit {
-  @Input() weather: weather;
-  imagePath = 'assets/images/';
-  imageExt = 'png';
-  imageSuffix = '_icon';
+  @Input() icon: string;
 
   constructor() { }
 
@@ -19,7 +15,7 @@ export class WeatherIconComponent implements OnInit {
   }
 
   getImageUrl(): string {
-    return `${this.imagePath}${this.weather.toLowerCase()}${this.imageSuffix}.${this.imageExt}`;
+    return `http://openweathermap.org/img/wn/${this.icon}@2x.png`;
   }
 
 }

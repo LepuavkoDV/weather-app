@@ -1,11 +1,11 @@
 export interface IWeather {
-  coord: {
+  coord?: {
     lon: string,
     lat: number,
   };
-  weather: Array<any>;
-  base: string;
-  main: {
+  weather?: Array<any>;
+  base?: string;
+  main?: {
     temp: number,
     feels_like: number,
     temp_min: number,
@@ -13,16 +13,16 @@ export interface IWeather {
     pressure: number,
     humidity: number,
   };
-  visibility: number;
-  wind: {
+  visibility?: number;
+  wind?: {
     speed: number,
     deg: number,
   };
-  clouds: {};
-  dt: number;
-  sys: {};
-  timezone: number;
-  id: number;
-  name: string;
-  cod: number;
+  clouds?: {};
+  dt?: number;
+  sys?: {};
+  timezone?: number;
+  id?: number;
+  name?: string;
+  cod?: number;
 }

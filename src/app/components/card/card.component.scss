@@ -33,14 +33,14 @@
 }
 
 .weather-card__icon {
-  height: 280px;
+  height: 100px;
   position: relative;
   @include basic-flex(row, center, center);
-  width: 280px;
+  width: 100px;
 }
 
 .weather-card__temperature {
-  width: 280px;
+  width: 100px;
   @include basic-flex(column, space-between, center);
 }
 
