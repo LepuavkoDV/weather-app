@@ -13,5 +13,5 @@ export const initialState: WeatherState = {
 
 export const weather = createReducer(
   initialState,
-  on(setWeather, (state, { newWeather }) => ({ ...state, weather: newWeather })),
+  on(setWeather, (state, { weather }) => ({ ...state, weather })),
 );
