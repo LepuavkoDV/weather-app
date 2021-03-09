@@ -5,7 +5,7 @@ import { AppState } from '../../reducers/app.reducer';
 import { setNewTheme } from '../../actions/app.actions';
 import { selectTheme } from '../../selectors/app.selector';
 import { Observable } from 'rxjs';
-import { theme, Themes } from '../../types/theme';
+import { theme, ThemeTypes } from '../../types/theme';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ import { theme, Themes } from '../../types/theme';
 })
 export class HeaderComponent implements OnInit {
   theme$: Observable<theme>;
-  Themes = Themes;
+  Themes = ThemeTypes;
   constructor(
     private store: Store<AppState>,
   ) {}
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleTheme($event: MatSlideToggleChange): void {
-    const newTheme = $event.checked ? Themes.dark : Themes.light;
+    const newTheme = $event.checked ? ThemeTypes.dark : ThemeTypes.light;
     this.store.dispatch(setNewTheme({ newTheme }));
   }
 

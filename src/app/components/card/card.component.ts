@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/app.reducer';
 import { selectTheme } from '../../selectors/app.selector';
 import { Observable } from 'rxjs';
-import { theme, Themes } from '../../types/theme';
+import { theme, ThemeTypes } from '../../types/theme';
 import { IWeather } from '../../types/IWeather';
 
 @Component({
@@ -14,7 +14,7 @@ import { IWeather } from '../../types/IWeather';
 export class CardComponent implements OnInit {
   @Input() weather: IWeather;
   theme$: Observable<theme>;
-  Themes = Themes;
+  Themes = ThemeTypes;
   constructor(
     private store: Store<AppState>,
   ) { }

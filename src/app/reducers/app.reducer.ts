@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { setNewTheme } from '../actions/app.actions';
-import { theme, Themes } from '../types/theme';
+import { theme, ThemeTypes } from '../types/theme';
 
 export interface IAppSettings {
   theme: theme;
@@ -12,7 +12,7 @@ export interface AppState {
 
 export const initialState: AppState = {
   settings: {
-    theme: Themes.light,
+    theme: ThemeTypes.light,
   },
 };
 
