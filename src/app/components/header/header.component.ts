@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../reducers/app.reducer';
+import { setNewTheme } from '../../actions/app.actions';
+import { selectTheme } from '../../selectors/app.selector';
+import { Observable } from 'rxjs';
+import { TTheme, ThemeTypes } from '../../types/TTheme';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +13,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  theme$: Observable<TTheme>;
+  Themes = ThemeTypes;
+  constructor(
+    private store: Store<AppState>,
+  ) {}
 
   ngOnInit(): void {
+    this.theme$ = this.store.select(selectTheme);
+  }
+
+  toggleTheme($event: MatSlideToggleChange): void {
+    const newTheme = $event.checked ? ThemeTypes.dark : ThemeTypes.light;
+    this.store.dispatch(setNewTheme({ newTheme }));
   }
 
 }

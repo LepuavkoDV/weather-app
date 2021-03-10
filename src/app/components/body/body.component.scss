@@ -5,4 +5,9 @@
   width: 100%;
   height: calc(100% - #{$header-height});
   @include basic-flex(row, space-around, center);
+
+  &--dark {
+    background: linear-gradient(180deg, #B290FF, #2E1D65);
+    color: aliceblue;
+  }
 }

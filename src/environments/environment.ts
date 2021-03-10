@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  xRapidapiKey: 'f6ec054409msh6b81feb5aef6c24p1054b2jsn9f79e10d9358',
 };
 
 /*

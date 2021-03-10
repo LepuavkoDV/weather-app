@@ -1,5 +1,6 @@
-<div class="body">
+<div class="body" [ngClass]="{ 'body--dark': (theme$ | async) === Themes.dark }">
   <app-card
+    [weather]="weather$ | async"
     *ngFor="let card of cards"
   >
     {{ card }}
