@@ -1,4 +1,8 @@
-<div class="weather-card" [ngClass]="{ 'weather-card--dark': (theme$ | async) === Themes.dark }" *ngIf="weather">
+<div
+  class="weather-card"
+  [ngClass]="{ 'weather-card--dark': (theme$ | async) === Themes.dark }"
+  *ngIf="weather"
+>
   <div class="weather-card__city-title">
     {{ weather.name }}
   </div>
